@@ -15,6 +15,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         setContentView(R.layout.activity_main)
 
         btnMoveActivity = findViewById(R.id.btn_moveActivity)
+        val btnMoveWithDataActivity: Button = findViewById(R.id.btn_moveActivity_data)
 
 //        btnMoveActivity.setOnClickListener {
 //            val moveIntent = Intent(this@MainActivity, MoveActivity::class.java)
@@ -22,6 +23,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 //        }
 
         btnMoveActivity.setOnClickListener(this)
+        btnMoveWithDataActivity.setOnClickListener(this)
 
     }
 
@@ -30,6 +32,12 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             R.id.btn_moveActivity -> {
             val moveIntent = Intent(this@MainActivity, MoveActivity::class.java)
             startActivity(moveIntent)
+            }
+            R.id.btn_moveActivity_data -> {
+                val moveData = Intent(this@MainActivity, MoveWithDataActivity::class.java)
+                moveData.putExtra(MoveWithDataActivity.EXTRA_NAME, "Asep Sutisna")
+                moveData.putExtra(MoveWithDataActivity.EXTRA_AGE, 19)
+                startActivity(moveData)
             }
         }
     }

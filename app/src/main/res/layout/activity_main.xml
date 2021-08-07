@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:padding="16dp"
     tools:context=".MainActivity">
 
@@ -12,6 +13,16 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/move_activity"
+        android:textColor="#ffffff"
+        android:background="@color/colorPrimary"
+        android:layout_marginBottom="16dp"
+        />
+
+    <Button
+        android:id="@+id/btn_moveActivity_data"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/move_with_data"
         android:textColor="#ffffff"
         android:background="@color/colorPrimary"
         android:layout_marginBottom="16dp"
