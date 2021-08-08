@@ -14,8 +14,10 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        //deklarasi and Assignment
         btnMoveActivity = findViewById(R.id.btn_moveActivity)
         val btnMoveWithDataActivity: Button = findViewById(R.id.btn_moveActivity_data)
+        val btnMoveWithObject : Button = findViewById(R.id.btn_move_activity_object)
 
 //        btnMoveActivity.setOnClickListener {
 //            val moveIntent = Intent(this@MainActivity, MoveActivity::class.java)
@@ -24,6 +26,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
         btnMoveActivity.setOnClickListener(this)
         btnMoveWithDataActivity.setOnClickListener(this)
+        btnMoveWithObject.setOnClickListener(this)
 
     }
 
@@ -38,6 +41,19 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 moveData.putExtra(MoveWithDataActivity.EXTRA_NAME, "Asep Sutisna")
                 moveData.putExtra(MoveWithDataActivity.EXTRA_AGE, 19)
                 startActivity(moveData)
+            }
+            R.id.btn_move_activity_object -> {
+                val dataPerson = Person (
+                    "Asep Sutisna",
+                    19,
+                    "sutisnaasep323@gmail.com",
+                    "Bogor"
+                        )
+
+                val moveData = Intent(this@MainActivity, MoveWithObjectActivity::class.java)
+                moveData.putExtra(MoveWithObjectActivity.EXTRA_PERSON, dataPerson)
+                startActivity(moveData)
+
             }
         }
     }
