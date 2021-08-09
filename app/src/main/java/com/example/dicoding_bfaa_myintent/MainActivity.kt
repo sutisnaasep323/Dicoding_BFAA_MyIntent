@@ -1,5 +1,6 @@
 package com.example.dicoding_bfaa_myintent
 
+import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.Intent
 import android.net.Uri
@@ -14,8 +15,8 @@ import androidx.activity.result.contract.ActivityResultContracts
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
 
-    lateinit var btnMoveActivity: Button
-    lateinit var tvResult: TextView
+    private lateinit var btnMoveActivity: Button
+    private lateinit var tvResult: TextView
 
     companion object {
         private const val REQUEST_CODE = 100
@@ -87,6 +88,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     //nyoba fix 1
+    @SuppressLint("SetTextI18n")
     val resultLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
         if (result.resultCode == MoveForResultActivity.RESULT_CODE) {
             // There are no request codes
